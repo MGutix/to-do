@@ -1,0 +1,1 @@
+(()=>{"use strict";function e(e,o,t,n){return{title:e,description:o,dueDate:t,priority:n,isDone:!1,edit:function(){console.log("im editting")},delete:function(){console.log("im deleteting")}}}const o=e("hacer compras","pollo","hoy",1);console.log(o),o.edit(),o.delete();const t=e;document.getElementById("add").addEventListener("click",t("hacer compras","pollo","hoy",1))})();
