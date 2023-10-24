@@ -2,3 +2,23 @@ body{
     margin: 0;
     padding: 0;
 }
+
+#add{
+    margin: 50px;
+}
+
+dialog {
+    border: none !important;
+    border-radius: 8px;
+    padding: 1.6rem;
+}
+
+.card{
+    width: 80%
+}
+
+#todoArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

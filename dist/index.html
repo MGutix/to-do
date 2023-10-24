@@ -9,56 +9,25 @@
 </head>
 <body>
     <div class="container-fluid">
-        <!-- <nav></nav> -->
-
-
-        <!--add To-Do button-->
-        <button type="button" class="btn btn-primary position-relative" id="add">
+      <!--add To-Do button-->
+        <button data-open-modal type="button" class="btn btn-primary position-relative" id="add">
           ADD
         </button>
 
-        <!--today button-->
-        
-        <button type="button" class="btn btn-primary position-relative">
-            Profile
-            <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-              <span class="visually-hidden">New alerts</span>
-            </span>
-          </button>
+        <!--Modal-->
+        <dialog data-modal>
+          <form method="dialog">
 
+              <input type="text" name="title" id="title" placeholder="Title">
+              <input type="text" name="description" id="description" placeholder="Description">
+              <input type="date" name="dueDate" id="dueDate" placeholder="Due Date">
+              <input type="number" min="1" max="3" name="priority" id="priority" placeholder="Priority">
 
-        <!--Week / month-->
-        <div class="list-group">
-            <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
-              The current button
+              <button type="submit" id="submit">Submit</button>
+          </form>
+      </dialog>
 
-              <!--como poner la pelotita roja-->
-              <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-                <span class="visually-hidden">New alerts</span>
-              </span>
-
-
-            </button>
-            <button type="button" class="list-group-item list-group-item-action">A second button item</button>
-            <button type="button" class="list-group-item list-group-item-action">A third button item</button>
-            <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
-        </div>
-
-        <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              A list item
-              <span class="badge bg-primary rounded-pill">14</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              A second list item
-              <span class="badge bg-primary rounded-pill">2</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              A third list item
-              <span class="badge bg-primary rounded-pill">1</span>
-            </li>
-          </ul>
-
+      <div id="todoArea" class="container-fluid"></div>
 
     </div>
 
