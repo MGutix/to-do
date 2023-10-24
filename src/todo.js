@@ -1,10 +1,11 @@
 class Todo {
-    constructor(title, description, dueDate, priority) {
+    constructor(title, description, dueDate, priority, project) {
 
         this.title = title
         this.description = description
         this.dueDate = dueDate
         this.priority = priority
+        this.project = project
 
         //empieza en false si le hacen click pasa a true y se va a completados
         this.isDone = false

@@ -26,8 +26,9 @@ function createTodo(){
     let description = document.getElementById('description').value;
     let dueDate = document.getElementById('dueDate').value;
     let priority = document.getElementById('priority').value;
+    let project = document.getElementById('projects').value;;
 
-    const todo = new Todo (title, description, dueDate, priority)
+    const todo = new Todo (title, description, dueDate, priority, project);
     todoArray.push(todo)
 
     console.table(todoArray)
@@ -66,6 +67,8 @@ function renderArray() {
 
         let cardDelete = document.createElement('button')
         cardDelete.textContent = 'Delete'
+        cardDelete.classList.add('btn')
+        cardDelete.classList.add('btn-danger')
         todoCard.appendChild(cardDelete)
 
         cardDelete.addEventListener('click', () => {
@@ -74,6 +77,9 @@ function renderArray() {
             todoCard.remove();
             console.log(todoArray)
           })
+
+
+        //add projects
     })
 }
 
