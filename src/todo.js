@@ -23,10 +23,10 @@ function createTodo (title, description, dueDate, priority) {
   }
 
   
-const todo1 = createTodo ('hacer compras', 'pollo', 'hoy', 1)
+/*const todo1 = createTodo ('hacer compras', 'pollo', 'hoy', 1)
 
 console.log(todo1)
 todo1.edit()
-todo1.delete()
+todo1.delete()*/
 
 export default createTodo;
