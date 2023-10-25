@@ -79,7 +79,15 @@ function renderArray() {
           })
 
 
-        //add projects
+        //add projects + default project displayed
+        //add create project
+
+        /*
+            view all projects
+            view all todos in each project (probably just the title and duedate… perhaps changing color for different priorities)
+            expand a single todo to see/edit its details
+            delete a todo
+        */
     })
 }
 
