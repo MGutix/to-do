@@ -3,6 +3,8 @@ import Todo from "./todo"
 const addButton = document.getElementById('add')
 let modal = document.querySelector('[data-modal]')
 let submit = document.getElementById('submit')
+let modalEdit = document.querySelector('[data-modalEdit]')
+let submitEdit = document.getElementById('submitEdit')
 let todoArray = [];
 
 
@@ -16,8 +18,8 @@ function openModal(){
         });
       
       
-        //buscar submit
-      submit.addEventListener('click', createTodo)
+        
+        submit.addEventListener('click', createTodo)
     
 }
 
@@ -26,11 +28,48 @@ function createTodo(){
     let description = document.getElementById('description').value;
     let dueDate = document.getElementById('dueDate').value;
     let priority = document.getElementById('priority').value;
-    let project = document.getElementById('projects').value;;
+    let project = document.getElementById('projects').value;
 
     const todo = new Todo (title, description, dueDate, priority, project);
     todoArray.push(todo)
 
+    console.log(`Dentro de createTodo`)
+    console.table(todoArray)
+
+    renderArray()
+}
+
+function openEdit(objectTodo){
+    modalEdit.showModal();
+
+    //chequear que aparezca la data del todo
+  
+  
+    submitEdit.addEventListener('click', () => {
+        editTodo(objectTodo)
+    })
+
+}
+
+function editTodo(objectTodo){
+    let titleEdit = document.getElementById('titleEdit').value;
+    let descriptionEdit = document.getElementById('descriptionEdit').value;
+    let dueDateEdit = document.getElementById('dueDateEdit').value;
+    let priorityEdit = document.getElementById('priorityEdit').value;
+    let projectEdit = document.getElementById('projectsEdit').value;
+
+    //para que no queden residuos en el modal cuando haces uno nuevo
+    // agregar que cada valor sea el valor del objeto
+    
+
+
+    objectTodo.title = titleEdit
+    objectTodo.description = descriptionEdit
+    objectTodo.dueDate = dueDateEdit
+    objectTodo.priority = priorityEdit
+    objectTodo.project = projectEdit
+
+    console.log(`Dentro de editTodo`)
     console.table(todoArray)
 
     renderArray()
@@ -65,6 +104,18 @@ function renderArray() {
         cardPriority.textContent = element.priority
         todoCard.appendChild(cardPriority)
 
+
+        let cardEdit = document.createElement('button')
+        cardEdit.textContent = 'Edit'
+        cardEdit.classList.add('btn')
+        cardEdit.classList.add('btn-warning')
+        todoCard.appendChild(cardEdit)
+
+        cardEdit.addEventListener('click', () => {
+            console.table(element)
+            openEdit(element)
+        })
+
         let cardDelete = document.createElement('button')
         cardDelete.textContent = 'Delete'
         cardDelete.classList.add('btn')
@@ -75,8 +126,12 @@ function renderArray() {
       
             todoArray.splice(element,1);
             todoCard.remove();
+            console.log('Deleted')
             console.log(todoArray)
           })
+
+
+        
 
 
         //add projects + default project displayed

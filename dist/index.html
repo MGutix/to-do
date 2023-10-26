@@ -14,7 +14,7 @@
           ADD
         </button>
 
-        <!--Modal-->
+        <!--Modal add-->
         <dialog data-modal>
           <form method="dialog">
 
@@ -30,6 +30,23 @@
               <button type="submit" id="submit">Submit</button>
           </form>
       </dialog>
+
+      <!--Modal edit-->
+      <dialog data-modalEdit>
+        <form method="dialog">
+
+            <input type="text" name="titleEdit" id="titleEdit" placeholder="Title">
+            <input type="text" name="descriptionEdit" id="descriptionEdit" placeholder="Description">
+            <input type="date" name="dueDateEdit" id="dueDateEdit" placeholder="Due Date">
+            <input type="number" min="1" max="3" name="priorityEdit" id="priorityEdit" placeholder="Priority">
+            <select name="projects" id="projectsEdit">
+              <!--agregar opciones de acuerdo a los projects que haya-->
+              <option value="default">Default</option>
+            </select>
+
+            <button type="submit" id="submitEdit">Submit Edit</button>
+        </form>
+    </dialog>
 
       <div id="todoArea" class="container-fluid"></div>
 
