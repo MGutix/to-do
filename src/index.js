@@ -1,4 +1,5 @@
 import Todo from "./todo"
+import './styles/style.css'
 
 const addButton = document.getElementById('add')
 let modal = document.querySelector('[data-modal]')
@@ -6,6 +7,27 @@ let submit = document.getElementById('submit')
 let modalEdit = document.querySelector('[data-modalEdit]')
 let submitEdit = document.getElementById('submitEdit')
 let todoArray = [];
+
+let projectList = ['Default']
+const projectArea = document.getElementById('projectArea')
+const addProjectInput = document.getElementById('addProjectInput')
+const addProjectBtn = document.getElementById('addProjectBtn')
+
+addProjectBtn.addEventListener('click', () =>{
+    projectList.push(addProjectInput.value)
+    renderProjects()
+    addProjectInput.value = ''
+})
+
+function renderProjects() {
+    projectArea.innerHTML = ''
+    projectList.map((element) => {
+        const projectElement = document.createElement('li')
+        projectElement.classList.add('myProj')//
+        projectElement.textContent = element
+        projectArea.appendChild(projectElement)
+    })
+}
 
 
 function openModal(){
@@ -44,7 +66,7 @@ function openEdit(objectTodo){
 
     //chequear que aparezca la data del todo
   
-  
+    submitEdit.removeEventListener('click', editTodo);
     submitEdit.addEventListener('click', () => {
         editTodo(objectTodo)
     })
@@ -57,9 +79,6 @@ function editTodo(objectTodo){
     let dueDateEdit = document.getElementById('dueDateEdit').value;
     let priorityEdit = document.getElementById('priorityEdit').value;
     let projectEdit = document.getElementById('projectsEdit').value;
-
-    //para que no queden residuos en el modal cuando haces uno nuevo
-    // agregar que cada valor sea el valor del objeto
     
 
 

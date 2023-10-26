@@ -21,4 +21,35 @@ dialog {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+#projectArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapper {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 3fr;
+    min-height: 1dvh;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
 }
