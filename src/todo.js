@@ -8,6 +8,7 @@ class Todo {
         this.project = project
 
         //empieza en false si le hacen click pasa a true y se va a completados
+        
         this.isDone = false
     }
 
